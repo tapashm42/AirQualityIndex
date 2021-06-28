@@ -1,0 +1,26 @@
+PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - ObjectMapper (3.5.3)
+  - Starscream (4.0.4)
+
+DEPENDENCIES:
+  - Charts
+  - ObjectMapper (~> 3.5)
+  - Starscream (~> 4.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - ObjectMapper
+    - Starscream
+
+SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+
+PODFILE CHECKSUM: 30691e6a6537fd31e496de467373ff4a28ed963b
+
+COCOAPODS: 1.10.1
