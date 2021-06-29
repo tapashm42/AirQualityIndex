@@ -1,6 +1,6 @@
 //
 //  NetworkLayer.swift
-//  CodeAssignment
+//  AirQualityIndex
 //
 //  Created by Mollick, Tapash on 27/06/21.
 //
@@ -60,7 +60,6 @@ extension Network: WebSocketDelegate {
                 debugPrint("\n disconnected \t reason: \(reason) \t code: \(code)")
             case .text(let string):
                 handleMessage(jsonString: string)
-                debugPrint("text: \(string)")
             case .binary(let data) :
                 debugPrint("binary :\(data)")
             case .cancelled:

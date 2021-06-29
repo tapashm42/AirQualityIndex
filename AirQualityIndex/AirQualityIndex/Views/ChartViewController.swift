@@ -1,6 +1,6 @@
 //
 //  ChartViewController.swift
-//  CodeAssignment
+//  AirQualityIndex
 //
 //  Created by Mollick, Tapash on 26/06/21.
 //
@@ -14,7 +14,7 @@ class ChartViewController: UIViewController {
     var city: String = ""
     var times: [String]!
     var aqiValues: [Double]!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = city
@@ -27,14 +27,11 @@ class ChartViewController: UIViewController {
         chartView.noDataText = "You need to provide data for the chart."
         var dataEntries:[BarChartDataEntry] = []
         for i in 0..<forX.count{
-            // print(forX[i])
-            // let dataEntry = BarChartDataEntry(x: (forX[i] as NSString).doubleValue, y: Double(unitsSold[i]))
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: times as AnyObject?)
             print(dataEntry)
             dataEntries.append(dataEntry)
         }
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Air Quality Index")
-//        chartDataSet.colors = ChartColorTemplates.material()
         chartDataSet.colors = aqiValues.map { setColor(value: $0) }
         let chartData = BarChartData(dataSet: chartDataSet)
         chartView.data = chartData

@@ -1,6 +1,6 @@
 //
 //  TableViewController.swift
-//  CodeAssignment
+//  AirQualityIndex
 //
 //  Created by Mollick, Tapash on 20/06/21.
 //
@@ -12,6 +12,7 @@ class CityListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "City wise Air Quality Index"
         tableView.register(UINib(nibName: AirQualityIndexViewCell.identifier, bundle: nil), forCellReuseIdentifier: AirQualityIndexViewCell.identifier)
         tableView.estimatedRowHeight = 84.0
         tableView.rowHeight = UITableView.automaticDimension
@@ -29,15 +30,12 @@ class CityListViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return viewModel.numberOfSection()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return viewModel.numberOfRowsInSection()
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AirQualityIndexViewCell.identifier, for: indexPath) as? AirQualityIndexViewCell else { return UITableViewCell() }
@@ -51,7 +49,7 @@ class CityListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let chartViewController = storyBoard.instantiateViewController(withIdentifier: "ChartViewController") as! ChartViewController
-        if let city = viewModel.item(for: indexPath.row)?.city {
+        if let city = viewModel.item(for: indexPath.section)?.city {
             chartViewController.city = city
         }
         navigationController?.pushViewController(chartViewController, animated: true)
