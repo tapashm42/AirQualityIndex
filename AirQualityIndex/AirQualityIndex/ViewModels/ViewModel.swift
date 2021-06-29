@@ -1,6 +1,6 @@
 //
 //  ViewModel.swift
-//  CodeAssignment
+//  AirQualityIndex
 //
 //  Created by Mollick, Tapash on 19/06/21.
 //
@@ -11,7 +11,6 @@ import Starscream
 class ViewModel {
     
     var netWorkd = Network()
-
     private(set) public var dataSource: [String: City] = [ : ] {
         didSet {
             self.bindDataToController()
@@ -37,8 +36,6 @@ class ViewModel {
         guard dataSource.count != 0, let key = dataSource.keys[index] as? String else {
             return nil
         }
-        
-        print(key)
         return dataSource[key]
     }
     
@@ -46,8 +43,8 @@ class ViewModel {
         self.prepareModel()
         netWorkd.load { (result) in
             switch result {
-                case .success(let data) :
-                    print("data:\(data)")
+                case .success( _) :
+                    break
                 case .failure(let error):
                     print("error: \(error.localizedDescription)")
             }

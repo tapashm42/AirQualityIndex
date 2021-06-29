@@ -1,6 +1,6 @@
 //
 //  AirQualityIndexViewCell.swift
-//  CodeAssignment
+//  AirQualityIndex
 //
 //  Created by Mollick, Tapash on 20/06/21.
 //
@@ -105,22 +105,3 @@ extension UITableViewCell {
         }
     }
 }
-
-
-//class cellDataModel {
-//    let city: String
-//    let aqi: [cellDataAQIModel]
-//    init(city: String, aqi: [cellDataAQIModel]) {
-//        self.aqi = aqi
-//        self.city = city
-//    }
-//}
-//
-//class cellDataAQIModel {
-//    let aqi: Float
-//    let date: Date
-//    init(aqi: Float, date: Date = Date()) {
-//        self.aqi = aqi
-//        self.date = date
-//    }
-//}

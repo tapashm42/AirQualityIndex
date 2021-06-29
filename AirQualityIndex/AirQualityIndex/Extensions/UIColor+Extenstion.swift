@@ -1,6 +1,6 @@
 //
 //  UIColor+Extenstion.swift
-//  CodeAssignment
+//  AirQualityIndex
 //
 //  Created by Mollick, Tapash on 26/06/21.
 //
